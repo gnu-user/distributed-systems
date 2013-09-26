@@ -1,6 +1,14 @@
+# Ignore backup files
+*.*~
+*~
+*.swp
+
+
+# Java ignores
 *.class
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.ear
+
