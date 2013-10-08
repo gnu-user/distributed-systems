@@ -16,6 +16,7 @@ public class MyGUI extends JFrame implements SwingConstants {
 	JMenuItem menuItem;
 	TextArea outputText;
 	JTextField inputText;
+	private static Label alertLabel;
 	
 
 	// Create a GUI Input Output interface to handle user input ad output
@@ -67,10 +68,18 @@ public class MyGUI extends JFrame implements SwingConstants {
 		outputText.setEditable(false);
 		panel.add(outputText);
 		
+		alertLabel = new Label("");
+		panel.add(alertLabel);
+		
 		setContentPane(panel);
 		setJMenuBar(menuBar);
 		pack();
 		setVisible(true);
+	}
+	
+	public static void setAlertLabel(String text)
+	{
+		alertLabel.setText(text);
 	}
 	
     class MyTextActionListener implements ActionListener {

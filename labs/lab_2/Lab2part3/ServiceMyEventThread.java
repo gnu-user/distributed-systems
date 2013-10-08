@@ -1,8 +1,8 @@
 import java.util.EventObject;
 
-import javax.swing.JOptionPane;
-
 public class ServiceMyEventThread extends MyEventListener {
+	
+	private int counter;
 	
 	/**
 	 * Constructor with delay to add the listener.
@@ -11,6 +11,7 @@ public class ServiceMyEventThread extends MyEventListener {
 	public ServiceMyEventThread(int delay)
 	{
 		addEventListener(delay);
+		counter = 0;
 	}
 	
 	/**
@@ -38,7 +39,9 @@ public class ServiceMyEventThread extends MyEventListener {
     @Override
     protected void executeEvent()
 	{
-		JOptionPane.showMessageDialog(null, "A custom event occurred",
-				"Message Dialog", JOptionPane.PLAIN_MESSAGE);
+		//JOptionPane.showMessageDialog(null, "A custom event occurred",
+				//"Message Dialog", JOptionPane.PLAIN_MESSAGE);
+    	counter++;
+    	MyGUI.setAlertLabel("Alert " + counter);
 	}
 }
