@@ -23,6 +23,6 @@ Lab2_part3 input guide
 2. Click on the white box within the window that has the text: 'Type here'
 3. Type in a message (eg. Hello) followed by pressing 'Enter'
 4. Notice that the darker shaded box that previously said: 'No Input Yet' has changed to your message in the box above (eg. Hello)
-5. Repeat step 2 through 4 until an alert message shows up in the bottom left comer of the window.
+5. Repeat step 2 through 4 until an alert message shows up in the bottom left corner of the window.
 6. If you wish to see another alert repeat steps 2 through 4 until the alert number increments.
 7. Terminate the program.
