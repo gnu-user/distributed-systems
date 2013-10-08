@@ -8,7 +8,7 @@ public class ServiceMyEvent extends MyEventListener {
 	public void addEventListener()
 	{
 		// Create a new MyEventClass
-		MyEventSource myEvent = new MyEventSource(1000);
+		MyEventSource myEvent = new MyEventSource(10000);
 		myEvent.addEventListener(this);
 		synchronized (this) {
 			try {

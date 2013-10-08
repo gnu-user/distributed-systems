@@ -1,0 +1,28 @@
+Lab2_part1 input guide
+----------------------
+
+1. Run program
+2. Click on the white box within the window that has the text: 'Type here'
+3. Type in a message (eg. Hello) followed by pressing 'Enter'
+4. Notice that the darker shaded box that previously said: 'No Input Yet' has changed to your message in the box above (eg. Hello)
+5. Terminate the program.
+
+Lab2_part2 input guide
+----------------------
+
+1. Run the program.
+2. Wait for 10000 ms or 10 seconds for the alert dialog to appear.
+3. Click the 'Ok' button to dismiss the dialog.
+4. Go to step 2 if you wish to see another dialog, otherwise continue to step 5.
+5. Terminate the program.
+
+Lab2_part3 input guide
+----------------------
+
+1. Run the program
+2. Click on the white box within the window that has the text: 'Type here'
+3. Type in a message (eg. Hello) followed by pressing 'Enter'
+4. Notice that the darker shaded box that previously said: 'No Input Yet' has changed to your message in the box above (eg. Hello)
+5. Repeat step 2 through 4 until an alert message shows up in the bottom left comer of the window.
+6. If you wish to see another alert repeat steps 2 through 4 until the alert number increments.
+7. Terminate the program.
