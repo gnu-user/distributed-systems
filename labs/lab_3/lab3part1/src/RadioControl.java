@@ -75,7 +75,7 @@ public class RadioControl extends Frame implements Runnable, KeyListener {
 			try {
 				Thread.sleep(DELAY_MS);
 			} catch (Exception e) {
-				System.out.println(e);
+				System.out.println("HERE" + e);
 				System.exit(1);
 			}
 		}
