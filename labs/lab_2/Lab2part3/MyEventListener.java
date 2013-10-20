@@ -48,10 +48,10 @@ public abstract class MyEventListener extends Thread implements MyEventClassList
 						System.out.println("My thread message has been interrupted");
 					}
 				}
-
-				executeEvent();
-				this.setShowDialog(false);
 			}
+			
+			executeEvent();
+			this.setShowDialog(false);
 				
 		}
 	}
