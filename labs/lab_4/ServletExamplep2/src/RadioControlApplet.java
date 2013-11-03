@@ -125,7 +125,7 @@ public class RadioControlApplet extends Applet implements Runnable, KeyListener 
 		while (true) { /* loop forever */
 			switch (command) {
 			case COMMAND_NONE:
-				myFrame.setTitle("None");
+				myFrame.setTitle("Stopped");
 				//Motor.A.stop();
 				sendMotorCommand(MOTOR_A, STOP);
 				break;
