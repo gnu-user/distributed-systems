@@ -1,0 +1,22 @@
+SCREENSHOT DESCRIPTIONS
+========================================
+
+Part B
+  - partB_1 The glassfish server has been started and servlet deployed
+  - partB_2 The simple servlet for part B has been deployed
+
+
+Part C
+  - partC_1 The glassfish server has been started, servlet deployed, applet started
+  - partC_2 The servlet for part C has been deployed
+  - partC_3 The applet in the default state of stopped, motor A direction is 0
+  - partC_4 The up arrow key has been pressed showing "Forwards" in the applet window, motor A direction is 1
+  - partC_5 The down arrow key has been pressed showing "Backwards" in the applet window, motor A direction is 2
+
+
+Part D
+  - partD_1 The glassfish server has been started, servlet deployed, applet started, the NXTRobotService has connected to the NXT device
+  - partD_2 The servlet for part D has been deployed
+  - partD_3 The applet in the default state of stopped, motor A direction is 0, NXT device motor is not moving
+  - partD_4 The up arrow key has been pressed showing "Forwards" in the applet window, motor A direction is 1, NXT device motor is moving forwards
+  - partD_5 The down arrow key has been pressed showing "Backwards" in the applet window, motor A direction is 2, NXT device motor is moving backwards
