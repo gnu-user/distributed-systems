@@ -5,12 +5,14 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Shopper extends Applet{
 
+	private ArrayList<Item> items;
 	/**
 	 * 
 	 */
@@ -24,6 +26,7 @@ public class Shopper extends Applet{
 	@Override
 	public void init() {
 		super.init();
+		items = new ArrayList<Item>();
 	}
 	
 	public int connectToServlet(){
@@ -39,13 +42,24 @@ public class Shopper extends Applet{
 			while ((numCharsRead = isr.read(charArray)) > 0) {
 				sb.append(charArray, 0, numCharsRead);
 			}
-			System.out.println(sb.toString());
-			Pattern p = Pattern.compile(".*?=([0-9]+)");
+			//System.out.println(sb.toString());
+			Pattern p = Pattern.compile(".*?id=\"id\">([0-9]+)</h2>.*?<tbody id=\"sale_items\">(.*?)</tbody>.*");
+			
 			Matcher m = p.matcher(sb.toString());
 
+			int id = 0;
 			if(m.find())
 			{
-				return Integer.valueOf(m.group(1));
+				id = Integer.valueOf(m.group(1));
+				System.out.println("Items for sale!");
+				
+				String list = m.group(2);
+				//System.out.println(list);
+				items = Item.getItems(list);
+				for(int i = 0; i < items.size(); i++){
+					System.out.println("Name: "+items.get(i).getName() + " Quanity: "+items.get(i).getQuantity() + " Price: " + items.get(i).getPrice());
+				}
+				return id;
 				//return Long.valueOf(m.group(0));
 			}
 			//return -1;
@@ -57,13 +71,13 @@ public class Shopper extends Applet{
 		return -1;
 	}
 	
-	public void sendItem(long id, String item, int quanity)
+	public void sendItem(int id, String item, int quanity)
 	{
 		try {
 			URL url = new URL(location);
 			URLConnection conn = url.openConnection();
 			conn.setRequestProperty("Cookie", 
-				DepartmentServer.NAME+"="+id+";item="+item+";amount="+quanity);
+				DepartmentServer.ID+"="+id+";"+DepartmentServer.NAME+"="+item+";"+DepartmentServer.QUANITY+"="+quanity);
 			conn.connect();
 			InputStream is = conn.getInputStream();
 			StringBuffer sb = new StringBuffer();
@@ -97,7 +111,7 @@ public class Shopper extends Applet{
 		
 		int id = connectToServlet();
 		Scanner in = new Scanner(System.in);
-		System.out.println("YOUR ID IS=" + id);
+		//System.out.println("YOUR ID IS=" + id);
 		if(id >= 0)
 		{
 			System.out.println("Enter the item you want!");
@@ -107,6 +121,8 @@ public class Shopper extends Applet{
 			
 			sendItem(id, input, amount);
 		}
+		
+		in.close();
 	}
 	
 }

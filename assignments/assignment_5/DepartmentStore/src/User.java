@@ -1,26 +1,19 @@
 import java.util.ArrayList;
 
-import javax.servlet.http.Cookie;
+public class User {
 
-
-public class User extends Cookie{
-
-	ArrayList<Item> items;
+	private ArrayList<Item> items;
+	private int id;
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	public User(String name, String value) {
-		super(name, value);
+	public User(int id) {
 		
 		this.items = new ArrayList<Item>();
+		this.id = id;
 	}
 	
-	public User(String name, String value, ArrayList<Item> list) {
-		super(name, value);
+	public User(int id, ArrayList<Item> list) {
 		this.items = list;
+		this.id = id;
 	}
 
 	public ArrayList<Item> getItems()
@@ -31,5 +24,31 @@ public class User extends Cookie{
 	public void setItems(ArrayList<Item> item)
 	{
 		this.items = item;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int hasItem(String name)
+	{
+		for(int i = 0; i < this.items.size(); i++)
+		{
+			if(this.items.get(i).getName().equalsIgnoreCase(name))
+			{
+				return i;
+			}
+		}
+		return -1;
 	}
 }

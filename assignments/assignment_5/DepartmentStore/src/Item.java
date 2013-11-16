@@ -1,11 +1,15 @@
 import java.util.ArrayList;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Item {
 	
 	private String name;
 	private int quantity;
 	private double price;
+	
+	private static final Pattern HTML_PARSER = Pattern.compile("<tr.*?><td>(.+?)</td><td>(.+?)</td><td>(.+?)</td></tr>(.*)");
 	
 	public Item(String name, int quantity, double price)
 	{
@@ -44,6 +48,22 @@ public class Item {
 	 */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	
+	/**
+	 * Increase the quantity maintained
+	 * @param the amount to increase the quantity by.
+	 */
+	public void increaseQuantity(int quantity) {
+		this.quantity += quantity;
+	}
+
+	/**
+	 * Decrease the quanity maintained
+	 * @param the amount to increase the quanity by.
+	 */
+	public void decreaseQuantity(int quantity) {
+		this.quantity -= quantity;
 	}
 
 	/**
@@ -84,6 +104,41 @@ public class Item {
 			values += items.get(i).getHTMLEntry();
 		}
 		return values;				
+	}
+	
+	/**
+	 * Parses the HTML list of strings 1 element at a time recursively until no element is let.
+	 * @param list The HTML list of elements
+	 * @return
+	 */
+	public static ArrayList<Item> getItems(String list)
+	{
+		ArrayList<Item> items = null;
+		
+		Matcher m = HTML_PARSER.matcher(list);
+		
+		if(m.find())
+		{
+			items = new ArrayList<Item>();
+			
+			Item item = new Item(m.group(1), Integer.valueOf(m.group(2)), Double.valueOf(m.group(3)));
+			
+			items = getItems(m.group(4));
+			
+			if(items!= null)
+			{
+				//Add the current item to the front of the list
+				items.add(0, item);
+			}
+			else
+			{
+				items = new ArrayList<Item>();
+				items.add(item);
+			}
+			
+		}		
+		
+		return items;
 	}
 
 }
