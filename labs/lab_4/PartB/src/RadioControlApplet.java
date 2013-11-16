@@ -50,7 +50,7 @@ public class RadioControlApplet extends Applet implements Runnable, KeyListener 
 	private static final int FORWARD = 1;
 	private static final int BACKWARDS = 2;
 	
-	String location = "http://localhost:8080/ServletExamplep2/SimpleServlet";
+	String location = "http://localhost:8080/ServletExample/SimpleServlet";
 	
 	private TextArea textArea;
 	
@@ -125,7 +125,7 @@ public class RadioControlApplet extends Applet implements Runnable, KeyListener 
 		while (true) { /* loop forever */
 			switch (command) {
 			case COMMAND_NONE:
-				myFrame.setTitle("Stopped");
+				myFrame.setTitle("None");
 				//Motor.A.stop();
 				sendMotorCommand(MOTOR_A, STOP);
 				break;

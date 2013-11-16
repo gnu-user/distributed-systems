@@ -50,7 +50,7 @@ public class RadioControlApplet extends Applet implements Runnable, KeyListener 
 	private static final int FORWARD = 1;
 	private static final int BACKWARDS = 2;
 	
-	String location = "http://localhost:8080/ServletExamplep2/SimpleServlet";
+	String location = "http://localhost:8084/PartC/SimpleServlet";
 	
 	private TextArea textArea;
 	
