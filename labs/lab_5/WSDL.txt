@@ -1,0 +1,19 @@
+Application Name:  Lab5PartC 
+Tester:  /Lab5PartC/NXTCommand?Tester 
+WSDL:  /Lab5PartC/NXTCommand?wsdl 
+Endpoint Name:  NXTRobotWS 
+Service Name:  http://jawxs.engr4790.lab/jaxws/nxtcommand 
+Port Name:  NXTCommandPort 
+Deployment Type:  109 
+Implementation Type:  SERVLET 
+Implementation Class Name:  NXTRobotWS 
+Endpoint Address URI:  /Lab5PartC/NXTCommand 
+Namespace:  NXTRobotWS 
+Description:  
+
+
+
+NOTE
+----------------
+
+WSDL: http://localhost:8084/Lab5PartC/NXTCommand?wsdl
